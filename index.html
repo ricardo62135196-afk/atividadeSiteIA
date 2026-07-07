@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Livros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Biblioteca Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Livros</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>Catálogo de Livros</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar por título ou autor...">
+                <button onclick="searchBooks()">🔍 Buscar</button>
+            </div>
+        </section>
+
+        <section class="books-grid" id="booksGrid">
+            <!-- Livros serão inseridos via JavaScript -->
+        </section>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <p>Nenhum livro encontrado com esse termo.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Biblioteca Virtual. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
