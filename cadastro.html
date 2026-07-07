@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Cadastro de Livros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Biblioteca Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Livros</a></li>
+                <li><a href="cadastro.html" class="active">Cadastro</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Cadastrar Novo Livro</h2>
+            <form id="bookForm" onsubmit="return validateForm(event)">
+                <div class="form-group">
+                    <label for="title">Título do Livro *</label>
+                    <input type="text" id="title" name="title" required 
+                           placeholder="Digite o título do livro">
+                    <span class="error" id="titleError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Autor *</label>
+                    <input type="text" id="author" name="author" required 
+                           placeholder="Nome do autor">
+                    <span class="error" id="authorError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="isbn">ISBN *</label>
+                    <input type="text" id="isbn" name="isbn" required 
+                           placeholder="978-85-333-0227-3" maxlength="17">
+                    <span class="error" id="isbnError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Ano de Publicação *</label>
+                    <input type="number" id="year" name="year" required 
+                           placeholder="2024" min="1000" max="2024">
+                    <span class="error" id="yearError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Categoria</label>
+                    <select id="category" name="category" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="ficcao">Ficção</option>
+                        <option value="nao-ficcao">Não Ficção</option>
+                        <option value="tecnico">Técnico</option>
+                        <option value="infantil">Infantil</option>
+                        <option value="biografia">Biografia</option>
+                    </select>
+                    <span class="error" id="categoryError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantidade de Exemplares *</label>
+                    <input type="number" id="quantity" name="quantity" required 
+                           min="1" max="100" value="1">
+                    <span class="error" id="quantityError"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">📝 Cadastrar Livro</button>
+                    <button type="reset" class="btn-secondary">Limpar Formulário</button>
+                </div>
+            </form>
+
+            <div class="success-message" id="successMessage" style="display: none;">
+                ✅ Livro cadastrado com sucesso!
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Biblioteca Virtual. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
